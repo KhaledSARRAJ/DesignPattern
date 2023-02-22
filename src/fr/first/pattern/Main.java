@@ -1,5 +1,6 @@
 package fr.first.pattern;
 
+import fr.first.pattern.prototype.ContexteData;
 import fr.first.pattern.strategy.ContexteApp;
 import fr.first.pattern.strategy.EnregistrerImplDoc;
 import fr.first.pattern.strategy.EnregistrerImplDocx;
@@ -7,7 +8,7 @@ import fr.first.pattern.strategy.EnregistrerImplPdf;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         //Partie Strategy
         ContexteApp contexteApp = new ContexteApp();
         contexteApp.setiEregistrer(new EnregistrerImplPdf());
@@ -16,6 +17,10 @@ public class Main {
         contexteApp.process();
         contexteApp.setiEregistrer(new EnregistrerImplDocx());
         contexteApp.process();
+
+        //Partie Prototype
+        ContexteData contexteData = new ContexteData();
+        contexteData.process();
 
     }
 }
