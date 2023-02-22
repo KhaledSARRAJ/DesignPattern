@@ -1,5 +1,6 @@
 package fr.first.pattern;
 
+import fr.first.pattern.observer.*;
 import fr.first.pattern.prototype.ContexteData;
 import fr.first.pattern.strategy.ContexteApp;
 import fr.first.pattern.strategy.EnregistrerImplDoc;
@@ -22,5 +23,14 @@ public class Main {
         ContexteData contexteData = new ContexteData();
         contexteData.process();
 
+        //Partie Observable
+        ObservableImpl o = new ObservableImpl();
+        Observer observer = new ObserverImplStrategy1();
+        Observer observer1 = new ObserverImplStrategy2();
+        o.subscribe(observer);
+        o.subscribe(observer1);
+        o.setCompteur(1000);
+        o.setCompteur(2001);
+        o.setCompteur(3003);
     }
 }
