@@ -6,7 +6,6 @@ import fr.first.pattern.strategy.ContexteApp;
 import fr.first.pattern.strategy.EnregistrerImplDoc;
 import fr.first.pattern.strategy.EnregistrerImplDocx;
 import fr.first.pattern.strategy.EnregistrerImplPdf;
-
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
